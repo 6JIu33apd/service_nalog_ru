@@ -86,6 +86,7 @@ public class Main {
 
             if (driver.findElement(By.xpath("//*[@id=\"pnlSearchResult\"]")).getAttribute("style").equals("display: block;")) {
                 Captcha.guiCaptcha(states[2]);
+                getHTML();
             }
             else {
                 getCaptchaImage();
@@ -95,6 +96,7 @@ public class Main {
 
                 if (driver.findElement(By.xpath("//*[@id=\"pnlSearchResult\"]")).getAttribute("style").equals("display: block;")) {
                     Captcha.guiCaptcha(states[2]);
+                    getHTML();
                 }
                 else {
                     while (driver.findElement(By.xpath("//*[@id=\"pnlSearchResult\"]")).getAttribute("style").equals("display: none;")) {
@@ -105,12 +107,12 @@ public class Main {
 
                         if (driver.findElement(By.xpath("//*[@id=\"pnlSearchResult\"]")).getAttribute("style").equals("display: block;")) {
                             Captcha.guiCaptcha(states[2]);
+                            getHTML();
                             break;
                         }
                     }
                 }
             }
-            getHTML();
 
         } catch (Exception ex) {
             ex.printStackTrace();
